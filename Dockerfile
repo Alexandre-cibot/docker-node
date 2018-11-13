@@ -1,14 +1,15 @@
 FROM ubuntu
 
 RUN apt-get update -y
-RUN apt-get install nodejs -y
 RUN apt-get install npm -y
+RUN apt-get install nodejs -y
+RUN npm i -g yarn
 
 WORKDIR /usr/src/app/
 
 COPY ./* ./
 
-RUN npm install
+RUN yarn
 
 EXPOSE 3000
 
